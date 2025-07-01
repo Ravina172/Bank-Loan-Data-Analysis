@@ -1,5 +1,5 @@
 # Bank-Loan-Data-Analysis
-![Bank Logo][https://t3.ftcdn.net/jpg/11/76/74/44/360_F_1176744463_uPWDWhRInTlocxSUBDpY2FeqhAhmoSsS.jpg]
+![Bank Logo](https://t3.ftcdn.net/jpg/11/76/74/44/360_F_1176744463_uPWDWhRInTlocxSUBDpY2FeqhAhmoSsS.jpg)
 
 ## Problem Statement
 As a data analyst supporting the credit risk and lending operations team, I developed an end-to-end analytics solution to answer a critical question: 
