@@ -35,31 +35,34 @@ This project uses a banking loan performance dataset designed to reflect real-wo
 
 ## Approach
 1. **Understand the Business Problem**
+   
 2. **Prepare and Transform the Data**
-I imported structured the loan data with borrower and repayment information. Used Excel for initial exploration and Power BI's Power Query Editor for transformation:
+Imported structured the loan data with borrower and repayment information. Used Excel for initial exploration and Power BI's Power Query Editor for transformation:
 - Standardized data types (dates, numbers, categories).
 - Handleded missing values and cleaned inconsistent fields.
 - Added new columns for risk classification.
 - Built date hierarchies to support time-based analysis (MTD, PMTD, MoM).
+
 3. **Define Key Metrics and Validate**
 Developed core KPIs using DAX in Power BI, including:
 - Total Applications, Funded Amount, Amount Received.
 - MTD / PMTD / MoM metrics for all key values.
 - High-Risk Loan Count and a Portfolio Health Score (based on DTI and grade logic).
 - Validated all Power BI outputs using SQL queries in SSMS, ensuring data accuracy and business alignment.
-4. **Build Insight-Driven Dashboards**
-| Page              | Purpose                                                                 |
-| ----------------- | ----------------------------------------------------------------------- |
-| **Summary**       | Snapshot of core KPIs and good vs. bad loan split with trend indicators |
-| **Overview**      | Segmentation across geography, grade, term, and borrower profiles       |
-| **Details**       | Loan-level table with filters for audits and deep dives                 |
-| **Risk Insights** | Forecasting, risk flag logic, and a visual portfolio health score       |
+
+4. **Build Insight-Driven Dashboards**                                                                 
+- **Summary**: Snapshot of core KPIs and good vs. bad loan split with trend indicators.
+- **Overview**: Segmentation across geography, grade, term, and borrower profiles.     
+- **Details**: Loan-level table with filters for audits and deep dives.                 
+- **Risk Insights**: Forecasting, risk flag logic, and a visual portfolio health score.
+     
 5.**Apply Risk Intelligence Logic**
 Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
 If DTI > 40% and Loan Grade ∈ {D, E, F, G} → Mark as “High Risk”
 - Added forecasting visuals for:
 - Monthly loan applications
 - Funded and received amounts
+
 6. **Validate and Deliver**
 Used SQL in SSMS to cross-verify all DAX outputs, ensuring the final dashboards were:
 - Aligned with business logic
@@ -87,13 +90,6 @@ Mandate income verification for borrowers with < 2 years of employment to improv
 Promote 36-month terms over 60-month to improve cash flow and reduce repayment risk.
 - Rebalance Regional Lending Mix
 Limit new originations in high-default regions like California and Texas; increase presence in low-risk states.
-
-## Visualization
-### Summary Dashboard
-
-### Overview Dashboard
-
-### Loan Detail
 
 ### Risk Insight Dashboard
 
