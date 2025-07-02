@@ -2,12 +2,16 @@
 ![Bank Logo](https://f2fa1cdd9340fae53fcb49f577292458.cdn.bubble.io/cdn-cgi/image/w=,h=,f=auto,dpr=1,fit=contain/f1701834212030x441532630499263300/Screenshot%20%284%29.png)
 
 ## Problem Statement
-As a data analyst supporting the credit risk and lending operations team, I developed an end-to-end analytics solution to answer a critical question: 
-“Which borrowers and loan segments present the highest financial risk, and how can we track loan performance in real time to protect portfolio health?”
-This dashboard focuses on three core challenges lenders face:
-- Early identification of high-risk borrowers based on credit grade, DTI, and repayment patterns.
-- Visibility into loan portfolio trends — including applications, funding, and repayments across time and regions.
-- Proactive risk monitoring, including custom risk flags and a composite portfolio health score for executive reporting.
+The goal of this project was to answer a critical question in the lending domain:
+
+"Which borrowers and loan segments present the highest financial risk, and how can we track loan performance in real time to protect portfolio health?"
+The dashboard was designed to address three key challenges for financial institutions:
+
+- Early risk detection using borrower-level indicators like credit grade, DTI, and payment history
+
+- Portfolio trend analysis across funding, applications, and repayments by time and geography
+
+- Proactive risk monitoring, including high-risk flags and a portfolio health scoring framework for executive reporting
 
 ## Objective
 Design an end-to-end loan performance monitoring solution for financial institutions using Power BI, focused on:
@@ -30,30 +34,38 @@ This project uses a banking loan performance dataset designed to reflect real-wo
 - DAX
 
 ## Approach
-1. **Business Understanding**
-- Interviewed key stakeholders (risk, product, credit ops) to identify metrics that impact loan performance and early warning signals.
+1. **Understand the Business Problem**
+2. **Prepare and Transform the Data**
+I imported structured the loan data with borrower and repayment information. Used Excel for initial exploration and Power BI's Power Query Editor for transformation:
+- Standardized data types (dates, numbers, categories).
+- Handleded missing values and cleaned inconsistent fields.
+- Added new columns for risk classification.
+- Built date hierarchies to support time-based analysis (MTD, PMTD, MoM).
+3. **Define Key Metrics and Validate**
+Developed core KPIs using DAX in Power BI, including:
+- Total Applications, Funded Amount, Amount Received.
+- MTD / PMTD / MoM metrics for all key values.
+- High-Risk Loan Count and a Portfolio Health Score (based on DTI and grade logic).
+- Validated all Power BI outputs using SQL queries in SSMS, ensuring data accuracy and business alignment.
+4. **Build Insight-Driven Dashboards**
+| Page              | Purpose                                                                 |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Summary**       | Snapshot of core KPIs and good vs. bad loan split with trend indicators |
+| **Overview**      | Segmentation across geography, grade, term, and borrower profiles       |
+| **Details**       | Loan-level table with filters for audits and deep dives                 |
+| **Risk Insights** | Forecasting, risk flag logic, and a visual portfolio health score       |
+5.**Apply Risk Intelligence Logic**
+Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
+If DTI > 40% and Loan Grade ∈ {D, E, F, G} → Mark as “High Risk”
+- Added forecasting visuals for:
+- Monthly loan applications
+- Funded and received amounts
+6. **Validate and Deliver**
+Used SQL in SSMS to cross-verify all DAX outputs, ensuring the final dashboards were:
+- Aligned with business logic
+- Reliable for decision-making
+- Ready for monthly or quarterly rollout
 
-2. **Data Preparation**
-- Cleaned and normalized borrower and loan-level data
-- Engineered features such as:
-    - DTI bucket
-    - Employment group
-    - Risk_Flag column (based on Grade and DTI)
-
-3. **Dashboard Development**
-- Structured dashboard into 4 intuitive pages:
-1.**Summary** – High-level KPIs (MTD, MoM), good vs. bad loan ratio
-2.**Overview** – Loan distributions by region, borrower type, and product
-3.**Details** – Record-level view for loan audits and deep dives
-4.**Risk Insights** – Forecasting trends, high-risk alerting, portfolio scoring
-
-4. **Data Validation**
-- Used SQL queries to validate Power BI outputs including:
-    - Funding totals
-    - Repayment values
-    - Good vs. bad loan segmentation
-    - Risk scoring logic
-    - 
 ## Key Insights
 - **Elevated Risk - High DTI + Low Risk**
 Borrowers with DTI > 40% and Grade D or lower show a disproportionately high default likelihood.
