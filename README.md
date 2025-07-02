@@ -36,15 +36,13 @@ This project uses a banking loan performance dataset designed to reflect real-wo
 ## Approach
 1. **Understand the Business Problem**
    
-2. **Prepare and Transform the Data**
-Imported structured the loan data with borrower and repayment information. Used Excel for initial exploration and Power BI's Power Query Editor for transformation:
+2. **Prepare and Transform the Data**: Imported structured the loan data with borrower and repayment information. Used Excel for initial exploration and Power BI's Power Query Editor for transformation:
 - Standardized data types (dates, numbers, categories).
 - Handleded missing values and cleaned inconsistent fields.
 - Added new columns for risk classification.
 - Built date hierarchies to support time-based analysis (MTD, PMTD, MoM).
 
-3. **Define Key Metrics and Validate**
-Developed core KPIs using DAX in Power BI, including:
+3. **Define Key Metrics and Validate**: Developed core KPIs using DAX in Power BI, including:
 - Total Applications, Funded Amount, Amount Received.
 - MTD / PMTD / MoM metrics for all key values.
 - High-Risk Loan Count and a Portfolio Health Score (based on DTI and grade logic).
@@ -56,30 +54,23 @@ Developed core KPIs using DAX in Power BI, including:
 - **Details**: Loan-level table with filters for audits and deep dives.                 
 - **Risk Insights**: Forecasting, risk flag logic, and a visual portfolio health score.
      
-5.**Apply Risk Intelligence Logic**
-Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
+5.**Apply Risk Intelligence Logic**: Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
 If DTI > 40% and Loan Grade ∈ {D, E, F, G} → Mark as “High Risk”
 - Added forecasting visuals for:
 - Monthly loan applications
 - Funded and received amounts
 
-6. **Validate and Deliver**
-Used SQL in SSMS to cross-verify all DAX outputs, ensuring the final dashboards were:
+6. **Validate and Deliver**: Used SQL in SSMS to cross-verify all DAX outputs, ensuring the final dashboards were:
 - Aligned with business logic
 - Reliable for decision-making
 - Ready for monthly or quarterly rollout
 
 ## Key Insights
-- **Elevated Risk - High DTI + Low Risk**
-Borrowers with DTI > 40% and Grade D or lower show a disproportionately high default likelihood.
-- **60-Month Loans Underperform**
-Longer-term loans have a higher delinquency rate and slower repayment compared to 36-month terms.
-- **Regional Risk Concentration Detected**
-California and Texas show the highest loan volumes and above-average default rates, indicating portfolio overexposure.
-- **Early Delinquency**
-Borrowers with < 2 years employment are more likely to miss early payments, especially when income is unverified.
-- **Portfolio Health Is Margin-Thin**
-Health score indicates a tight balance between good loans and risk exposure, calling for stricter underwriting.
+- **Elevated Risk: High DTI + Low Risk** borrowers with DTI > 40% and Grade D or lower show a disproportionately high default likelihood.
+- **60-Month Loans Underperform**: Longer-term loans have a higher delinquency rate and slower repayment compared to 36-month terms.
+- **Regional Risk Concentration Detected**: California and Texas show the highest loan volumes and above-average default rates, indicating portfolio overexposure.
+- **Early Delinquency**: Borrowers with < 2 years employment are more likely to miss early payments, especially when income is unverified.
+- **Portfolio Health Is Margin-Thin**: Health score indicates a tight balance between good loans and risk exposure, calling for stricter underwriting.
 
 ## Business Recommendation
 - Tighten Underwriting for High-Risk Profiles
@@ -91,11 +82,11 @@ Promote 36-month terms over 60-month to improve cash flow and reduce repayment r
 - Rebalance Regional Lending Mix
 Limit new originations in high-default regions like California and Texas; increase presence in low-risk states.
 
-### Risk Insight Dashboard
+## About Me
+I'm an aspiring Data Analyst who turns raw data into actionable business insights. My strength lies in asking the right questions, building clear visual stories, and making recommendations that drive results.I’m actively looking for opportunities where I can help businesses grow through smarter data use.
 
+Connect on [Linkedin](https://www.linkedin.com/in/ravina-patidar-474a9b255/)
 
-
-
-
+Reach me at [Email](ravinapatidar13634@gmail.com)
 
 
