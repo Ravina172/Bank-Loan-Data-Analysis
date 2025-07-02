@@ -53,9 +53,9 @@ This project uses a banking loan performance dataset designed to reflect real-wo
 - **Overview**: Segmentation across geography, grade, term, and borrower profiles.     
 - **Details**: Loan-level table with filters for audits and deep dives.                 
 - **Risk Insights**: Forecasting, risk flag logic, and a visual portfolio health score.
-     
-5.**Apply Risk Intelligence Logic**: Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
-If DTI > 40% and Loan Grade ∈ {D, E, F, G} → Mark as “High Risk”
+
+5. **Apply Risk Intelligence Logic**: Created a High-Risk Loan Flag to help with forward-looking resource planning and risk adjustmentusing the following logic:
+   If DTI > 40% and Loan Grade ∈ {D, E, F, G} → Mark as “High Risk”
 - Added forecasting visuals for:
 - Monthly loan applications
 - Funded and received amounts
